@@ -67,15 +67,15 @@ void capacitorCodeConverter(int capacitorCode, int multiplier){ //Takes the capa
     }
 
     if(capacitance > 999999.00){ //If the capacitance is in the micro range (multiplier = 5)
-        printf("The capacitance of your capacitor is %.2f uF\n", capacitance / 1000000.00);
+        printf("The capacitance of your capacitor is %.2f uF\n\n", capacitance / 1000000.00);
     }
     else if(capacitance > 999.00){ //If the capacitance is in the nano range (multiplier = 2, 3, or 4)
-        printf("The capacitance of your capacitor is %.2f nF\n", capacitance / 1000.00);
+        printf("The capacitance of your capacitor is %.2f nF\n\n", capacitance / 1000.00);
     }
     else if(capacitance < 1.00){ //If the capacitance is in the femto range (multiplier = 8)
-        printf("The capacitance of your capacitor is %.2f fF\n", capacitance * 1000);
+        printf("The capacitance of your capacitor is %.2f fF\n\n", capacitance * 1000);
     }
     else{ //If the capacitance is in the pico range (multiplier = 1 or 9)
-        printf("The capacitance of your capacitor is %.2f pF\n", capacitance);
+        printf("The capacitance of your capacitor is %.2f pF\n\n", capacitance);
     }
 }
