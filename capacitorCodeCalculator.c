@@ -7,7 +7,7 @@
 void capacitorCodeConverter(int capacitorCode, int multiplier);
 
 int main(void){
-    int userCapacitorCode, multiplier, userContinueStatus = 0;
+    int userCapacitorCode = 0, multiplier = 0, userContinueStatus = 0;
     bool exitProgram = false;
     
     while(!exitProgram){
@@ -32,7 +32,7 @@ int main(void){
         }
 
         do{
-            printf("Do you want to enter another capacitor code?\nEnter 1 to continue, or enter 0 to end the program: ");
+            printf("Enter another capacitor code? (1 = Yes, 0 = No): ");
             scanf("%d", &userContinueStatus);
             puts(""); //This is for spacing purposes
         }while(userContinueStatus != 0 && userContinueStatus != 1); //Checks for a valid input
@@ -67,13 +67,13 @@ void capacitorCodeConverter(int capacitorCode, int multiplier){ //Takes the capa
     }
 
     if(capacitance > 999999.00){ //If the capacitance is in the micro range (multiplier = 5)
-        printf("The capacitance of your capacitor is %.2f uF\n", capacitance /= 1000000.00);
+        printf("The capacitance of your capacitor is %.2f uF\n", capacitance / 1000000.00);
     }
     else if(capacitance > 999.00){ //If the capacitance is in the nano range (multiplier = 2, 3, or 4)
-        printf("The capacitance of your capacitor is %.2f nF\n", capacitance /= 1000.00);
+        printf("The capacitance of your capacitor is %.2f nF\n", capacitance / 1000.00);
     }
     else if(capacitance < 1.00){ //If the capacitance is in the femto range (multiplier = 8)
-        printf("The capacitance of your capacitor is %.2f fF\n", capacitance *= 1000);
+        printf("The capacitance of your capacitor is %.2f fF\n", capacitance * 1000);
     }
     else{ //If the capacitance is in the pico range (multiplier = 1 or 9)
         printf("The capacitance of your capacitor is %.2f pF\n", capacitance);
